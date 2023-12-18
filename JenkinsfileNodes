@@ -11,7 +11,7 @@ pipeline {
                     steps {
                         script {
                             bat 'echo "Sleep 10 seconds on Windows Node"'
-                            bat 'timeout /t 100'
+                            bat 'timeout /t 10'
                         }
                     }
                 }
