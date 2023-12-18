@@ -6,16 +6,15 @@ pipeline {
             steps {
                 script {
                     def branchTasks = [
-                        'main': {
+                        'origin/main': {
                             echo 'Running tasks for the main branch'
                         },
-                        'test': {
+                        'origin/test': {
                             echo 'Running tasks for the test branch'
                         }
                     ]
-                    sh 'echo ${GIT_BRANCH}'
-                    def branchTask = branchTasks[env.BRANCH_NAME] ?: {
-                        echo "Running default tasks for branch: ${env.BRANCH_NAME}"
+                    def branchTask = branchTasks[GIT_BRANCH] ?: {
+                        echo "Running default tasks for branch: ${GIT_BRANCH}"
                     }
                     branchTask.call()
                 }
