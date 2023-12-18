@@ -1,5 +1,10 @@
 pipeline {
-    agent any
+    agent {
+        docker {
+            // Use an official Python image with the desired version
+            image 'python:3.8'
+        }
+    }
     stages {
         stage('Install Dependencies') {
             steps {
