@@ -10,7 +10,8 @@ pipeline {
                     }
                     steps {
                         script {
-                            bat 'echo "Running tests on Windows"'
+                            bat 'echo "Sleep 10 seconds on Windows Node"'
+                            bat 'timeout /t 10 > nul'
                         }
                     }
                 }
@@ -21,7 +22,8 @@ pipeline {
                     }
                     steps {
                         script {
-                            sh 'echo "Running tests on Linux"'
+                            sh 'echo "Sleep 10 seconds on Linux Node"'
+                            sh 'sleep 10'
                         }
                     }
                 }
