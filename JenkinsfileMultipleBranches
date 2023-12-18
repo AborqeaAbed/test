@@ -10,7 +10,7 @@ pipeline {
                             echo 'Running tasks for the main branch'
                         },
                         'test': {
-                            echo 'Running tasks for the develop branch'
+                            echo 'Running tasks for the test branch'
                         }
                     ]
                     sh 'echo ${GIT_BRANCH}'
