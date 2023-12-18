@@ -8,12 +8,12 @@ pipeline {
                     // Define a map of branch names to tasks
                     def branchTasks = [
                         'main': {
-                            echo 'Running tasks for the master branch'
+                            echo 'Running tasks for the main branch'
                             // Add commands for the master branch
                         },
                         'test': {
                             echo 'Running tasks for the develop branch'
-                            // Add commands for the develop branch
+                            // Add commands for the test branch
                         }
                     ]
 
