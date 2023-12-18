@@ -11,14 +11,14 @@ pipeline {
                     steps {
                         script {
                             bat 'echo "Sleep 10 seconds on Windows Node"'
-                            bat 'timeout /t 10 > nul'
+                            bat 'timeout /nobreak /t 10 > nul'
                         }
                     }
                 }
 
                 stage('Linux') {
                     agent {
-                        label 'Built-In Node'
+                        label 'unix'
                     }
                     steps {
                         script {
