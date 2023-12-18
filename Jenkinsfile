@@ -5,7 +5,7 @@ pipeline {
             steps {
                 // Install dependencies (e.g., pytest)
                 script {
-                    $ pip install pytest
+                    sh 'pip install pytest'
                 }
             }
         }
