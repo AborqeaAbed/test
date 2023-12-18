@@ -5,14 +5,6 @@ pipeline {
         }
     }
     stages {
-        stage('Install Dependencies') {
-            steps {
-                script {
-                    sh 'pip install pytest'
-                }
-            }
-        }
-
         stage('Run Tests') {
             steps {
                 script {
