@@ -17,7 +17,7 @@ pipeline {
             steps {
                 script {
                      echo 'Running tests...'
-                     sh 'pytest test_add.py'
+                     sh 'PYTHONPATH=. pytest'
                      echo 'Tests completed.'
                 }
             }
