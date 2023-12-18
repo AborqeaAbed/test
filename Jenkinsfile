@@ -17,7 +17,9 @@ pipeline {
         stage('Run Tests') {
             steps {
                 script {
-                    sh 'pytest test_add.py'
+                     echo 'Running tests...'
+                     sh 'pytest test_add.py'
+                     echo 'Tests completed.'
                 }
             }
         }
