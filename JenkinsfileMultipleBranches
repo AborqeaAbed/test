@@ -5,25 +5,16 @@ pipeline {
         stage('Build and Test') {
             steps {
                 script {
-                    // Define a map of branch names to tasks
                     def branchTasks = [
                         'main': {
                             echo 'Running tasks for the main branch'
-                            // Add commands for the master branch
                         },
                         'test': {
                             echo 'Running tasks for the develop branch'
-                            // Add commands for the test branch
                         }
                     ]
-
-                    // Determine the current Git branch
-                    def currentBranch = env.BRANCH_NAME
-
-                    // Execute tasks based on the current branch
-                    def branchTask = branchTasks[currentBranch] ?: {
-                        echo "Running default tasks for branch: ${currentBranch}"
-                        // Add default commands for other branches
+                    def branchTask = branchTasks[env.BRANCH_NAME] ?: {
+                        echo "Running default tasks for branch: ${env.BRANCH_NAME}"
                     }
                     branchTask.call()
                 }
