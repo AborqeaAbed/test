@@ -1,14 +1,13 @@
 pipeline {
     agent {
         docker {
-            // Use an official Python image with the desired version
             image 'python:3.8'
+            args '-v $PWD:/app'
         }
     }
     stages {
         stage('Install Dependencies') {
             steps {
-                // Install dependencies (e.g., pytest)
                 script {
                     sh 'pip install pytest'
                 }
@@ -17,7 +16,6 @@ pipeline {
 
         stage('Run Tests') {
             steps {
-                // Run the pytest command
                 script {
                     sh 'pytest test_add.py'
                 }
