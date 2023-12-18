@@ -13,6 +13,7 @@ pipeline {
                             echo 'Running tasks for the develop branch'
                         }
                     ]
+                    echo ${GIT_BRANCH}
                     def branchTask = branchTasks[env.BRANCH_NAME] ?: {
                         echo "Running default tasks for branch: ${env.BRANCH_NAME}"
                     }
